@@ -12,7 +12,6 @@ filetype plugin indent on
 syntax on
 
 nmap <leader>n :NERDTreeToggle<cr>
-autocmd vimenter * NERDTree
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Always show statusline
@@ -21,3 +20,6 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " " Use 256 colours (Use this setting only if your terminal supports 256
 " colours)
  set t_Co=256
+
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
