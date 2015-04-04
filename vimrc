@@ -23,3 +23,9 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
+inoremap {<cr> {<cr>}<c-o>O<tab>
+inoremap [<cr> [<cr>]<c-o>O<tab>
+inoremap (<cr> (<cr>)<c-o>O<tab>
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>

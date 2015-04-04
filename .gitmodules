@@ -13,3 +13,6 @@
 [submodule "bundle/SingleCompile"]
 	path = bundle/SingleCompile
 	url = https://github.com/xuhdev/SingleCompile/
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git
