@@ -19,13 +19,17 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 "
 " " Use 256 colours (Use this setting only if your terminal supports 256
 " colours)
- set t_Co=256
+set t_Co=256
+set tabstop=4 shiftwidth=4 expandtab
+set number
 
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
-inoremap {<cr> {<cr>}<c-o>O<tab>
-inoremap [<cr> [<cr>]<c-o>O<tab>
-inoremap (<cr> (<cr>)<c-o>O<tab>
+inoremap {<cr> {<cr>}<c-o>O
+inoremap ({;<cr> ({<cr>});<c-o>O
+inoremap [<cr> [<cr>]<c-o>O
+inoremap (<cr> (<cr>)<c-o>O
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
+
