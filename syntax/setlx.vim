@@ -49,5 +49,5 @@ hi link SetlXMultilineComment Comment
 hi link SetlXString String
 hi link SetlXNumber Number
 hi link SetlXFloat Number
-
+hi link SetlX Keyword
 let b:current_syntax = "setlx"
