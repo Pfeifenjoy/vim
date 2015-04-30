@@ -22,6 +22,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256
 set tabstop=4 shiftwidth=4 expandtab
 set number
+autocmd FileType tex setlocal makeprg=pdflatex\ --shell-escape\ '%'
 
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
