@@ -7,6 +7,8 @@ set ignorecase
 set ruler
 set background=dark
 set mouse=a
+set spell
+set spelllang=de
 execute pathogen#infect()
 filetype plugin indent on
 syntax on

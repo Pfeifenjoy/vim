@@ -28,3 +28,9 @@
 [submodule "bundle/eclim"]
 	path = bundle/eclim
 	url = https://github.com/ervandew/eclim
+[submodule "bundle/--force"]
+	path = bundle/--force
+	url = https://github.com/ervandew/eclim
+[submodule "bundle/vim-handlebars"]
+	path = bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars
