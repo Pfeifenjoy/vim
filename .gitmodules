@@ -34,3 +34,9 @@
 [submodule "bundle/vim-handlebars"]
 	path = bundle/vim-handlebars
 	url = https://github.com/nono/vim-handlebars
+[submodule "bundle/vim-gradle"]
+	path = bundle/vim-gradle
+	url = https://github.com/tfnico/vim-gradle
+[submodule "bundle/Vim-JDE"]
+	path = bundle/Vim-JDE
+	url = https://github.com/vim-scripts/Vim-JDE

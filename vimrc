@@ -26,6 +26,21 @@ set tabstop=4 shiftwidth=4 expandtab
 set number
 autocmd FileType tex setlocal makeprg=pdflatex\ --shell-escape\ '%'
 
+if has('gui_running')
+  set grepprg=grep\ -nH\ $*
+  let g:tex_flavor='latex'
+endif
+au BufEnter *.tex set autowrite
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
+let g:Tex_GotoError = 0
+function! SyncTexForward()
+   let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &"
+   exec execstr
+endfunction
+let g:Tex_ViewRule_pdf = 'okular'
+
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
 inoremap {<cr> {<cr>}<c-o>O
