@@ -40,3 +40,18 @@
 [submodule "bundle/Vim-JDE"]
 	path = bundle/Vim-JDE
 	url = https://github.com/vim-scripts/Vim-JDE
+[submodule "bundle/vim-android"]
+	path = bundle/vim-android
+	url = https://github.com/hsanson/vim-android
+[submodule "bundle/vim-antlr"]
+	path = bundle/vim-antlr
+	url = https://github.com/rollxx/vim-antlr
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "bundle/vim-table-mode"]
+	path = bundle/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode/
+[submodule "bundle/ctrlp.vim"]
+	path = bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim

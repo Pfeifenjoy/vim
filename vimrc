@@ -7,7 +7,7 @@ set ignorecase
 set ruler
 set background=dark
 set mouse=a
-set spell
+"set spell
 set spelllang=de
 execute pathogen#infect()
 filetype plugin indent on
@@ -51,3 +51,5 @@ map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 
+
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
