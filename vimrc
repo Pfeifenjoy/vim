@@ -1,3 +1,7 @@
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"General Settings
 set tabstop=4
 set shiftwidth=4
 set showmatch
