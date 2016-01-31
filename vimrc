@@ -30,15 +30,9 @@ set tabstop=4 shiftwidth=4 expandtab
 set number
 
 
-nmap <F9> :SCCompile<cr>
-nmap <F10> :SCCompileRun<cr>
-inoremap {<cr> {<cr>}<c-o>O
-inoremap ({;<cr> ({<cr>});<c-o>O
-inoremap [<cr> [<cr>]<c-o>O
-inoremap (<cr> (<cr>)<c-o>O
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 
-
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+let g:tex_flavor='latex'
