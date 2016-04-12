@@ -39,7 +39,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " colours)
 set t_Co=256
 set tabstop=4 shiftwidth=4 expandtab
-set number
+set relativenumber
 
 
 map  <C-l> :tabn<CR>
