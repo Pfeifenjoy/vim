@@ -8,9 +8,15 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'bling/vim-airline' 
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'mattn/emmet-vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'helino/vim-nasm'
+Plugin 'kien/ctrlp.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ternjs/tern_for_vim', { 'do': 'npm install' }
 call vundle#end()
 
 "General Settings
@@ -40,6 +46,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256
 set tabstop=4 shiftwidth=4 expandtab
 set relativenumber
+set number
 
 
 map  <C-l> :tabn<CR>
@@ -79,3 +86,16 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tabs = 0
+
+"Latexbox
+let g:LatexBox_latexmk_options = "-pvc -pdfps"
+
+"Gundo Toggle
+nnoremap <F5> :GundoToggle<CR>
+
+"Tern Javascript helper functions
+map <leader>d :TernDef<CR>
+map <leader>i :TernDoc<CR>
+map <leader>t :TernType<CR>
+map <leader>r :TernRefs<CR>
+map <leader>c :TernRename<CR>
