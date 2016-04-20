@@ -1,10 +1,11 @@
-set rtp+=~/.vim/bundle/vundle/
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Bundle 'mxw/vim-jsx'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
@@ -17,7 +18,24 @@ Plugin 'helino/vim-nasm'
 Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plugin 'jrozner/vim-antlr'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tfnico/vim-gradle'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'groenewege/vim-less'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'shirk/vim-gas'
+Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
+Plugin 'valloric/youcompleteme'
+Plugin 'pangloss/vim-javascript'
+Plugin 'SirVer/ultisnips'
 call vundle#end()
+filetype plugin indent on
 
 "General Settings
 set tabstop=4
@@ -31,8 +49,6 @@ set background=dark
 set mouse=a
 "set spell
 set spelllang=de
-execute pathogen#infect()
-filetype plugin indent on
 syntax on
 
 nmap <leader>n :NERDTreeToggle<cr>
@@ -53,7 +69,6 @@ map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:tex_flavor='latex'
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -69,9 +84,7 @@ let g:syntastic_check_on_open=1
 
 " These are the tweaks I apply to YCM's config, you don't need them but they might help.
 " YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
-set completeopt-=preview
+"set completeopt=menuone
 
 
 let g:syntastic_javascript_checkers = ['eslint']
@@ -99,3 +112,15 @@ map <leader>i :TernDoc<CR>
 map <leader>t :TernType<CR>
 map <leader>r :TernRefs<CR>
 map <leader>c :TernRename<CR>
+
+"Snipmate
+"imap <c-space> <Plug>snipMateNextOrTrigger
+"smap <c-space> <Plug>snipMateNextOrTrigger
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
