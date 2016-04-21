@@ -1,1 +1,0 @@
-/home/arwed/.vim/vimrc
