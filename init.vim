@@ -32,6 +32,9 @@ Plug 'honza/vim-snippets'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'tomasr/molokai'
+Plug 'eugen0329/vim-esearch'
+Plug 'floobits/floobits-neovim'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 filetype plugin indent on
@@ -120,11 +123,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
 "deoplete
 let g:deoplete#enable_at_startup = 1
 if !exists('g:deoplete#omni#input_patterns')
@@ -159,14 +157,6 @@ tnoremap <Esc> <C-\><C-n>
 
 set undofile
 set undodir=~/.vimundo
+set clipboard=unnamed
 
-function! ClipboardYank()
-  call system('xclip -i -selection clipboard', @@)
-endfunction
-function! ClipboardPaste()
-  let @@ = system('xclip -o -selection clipboard')
-endfunction
 
-vnoremap <silent> y y:call ClipboardYank()<cr>
-vnoremap <silent> d d:call ClipboardYank()<cr>
-nnoremap <silent> p :call ClipboardPaste()<cr>p
