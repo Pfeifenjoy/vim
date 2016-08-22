@@ -35,11 +35,8 @@ Plug 'tomasr/molokai'
 Plug 'eugen0329/vim-esearch'
 Plug 'floobits/floobits-neovim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
-
-filetype plugin indent on
-syntax on
-colorscheme molokai
 
 "General Settings
 set tabstop=4
@@ -51,31 +48,29 @@ set ignorecase
 set ruler
 set background=dark
 set mouse=a
-"set spell
 set spelllang=de
-
-nmap <leader>n :NERDTreeToggle<cr>
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-
-" Always show statusline
- set laststatus=2
-"
+set laststatus=2
+set laststatus=2
+set lazyredraw 
+set undofile
+set undodir=~/.vimundo
+set clipboard=unnamed
+set showcmd
 " " Use 256 colours (Use this setting only if your terminal supports 256
 " colours)
 set t_Co=256
 set tabstop=4 shiftwidth=4 expandtab
 set relativenumber
 set number
+filetype plugin indent on
+syntax on
+colorscheme molokai
 
-
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
-map  <C-n> :tabnew<CR>
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 let g:tex_flavor='latex'
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
 
 "JSX Syntax options
 let g:jsx_ext_required = 0
@@ -83,19 +78,9 @@ let g:jsx_ext_required = 0
 " This does what it says on the tin. It will check your file on open too, not just on save.
 " You might not want this, so just leave it out if you don't.
 let g:syntastic_check_on_open=1
-
-
-" These are the tweaks I apply to YCM's config, you don't need them but they might help.
-" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
-"set completeopt=menuone
-
-
 let g:syntastic_javascript_checkers = ['eslint']
 
-
 " Status bar (airline plugin)
-set laststatus=2
-set lazyredraw 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -106,15 +91,6 @@ let g:airline#extensions#tabline#show_tabs = 0
 "Latexbox
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
 
-"Gundo Toggle
-nnoremap <F5> :GundoToggle<CR>
-
-"Tern Javascript helper functions
-map <leader>d :TernDef<CR>
-map <leader>i :TernDoc<CR>
-map <leader>t :TernType<CR>
-map <leader>r :TernRefs<CR>
-map <leader>c :TernRename<CR>
 
 "Snipmate
 "imap <c-space> <Plug>snipMateNextOrTrigger
@@ -153,10 +129,21 @@ inoremap <Leader><Tab> <Space><Space>
 " tern
 autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
+
+"Shortcuts
+"General
 tnoremap <Esc> <C-\><C-n>
+nmap <leader>n :Lexplore<cr>
+"Gundo Toggle
+nnoremap <F5> :GundoToggle<CR>
+"Tern Javascript helper functions
+map <leader>d :TernDef<CR>
+map <leader>i :TernDoc<CR>
+map <leader>t :TernType<CR>
+map <leader>r :TernRefs<CR>
+map <leader>c :TernRename<CR>
 
-set undofile
-set undodir=~/.vimundo
-set clipboard=unnamed
-
-
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>
+map  <C-f> :FZF<CR>
