@@ -36,6 +36,7 @@ Plug 'eugen0329/vim-esearch'
 Plug 'floobits/floobits-neovim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'artur-shaik/vim-javacomplete2'
 call plug#end()
 
 "General Settings
@@ -56,6 +57,8 @@ set undofile
 set undodir=~/.vimundo
 set clipboard=unnamed
 set showcmd
+set list
+set listchars=tab:▸\ ,trail:·,eol:¬
 " " Use 256 colours (Use this setting only if your terminal supports 256
 " colours)
 set t_Co=256
@@ -131,6 +134,7 @@ autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
 
 "Shortcuts
+nnoremap <Space> <leader>
 "General
 tnoremap <Esc> <C-\><C-n>
 nmap <leader>n :Lexplore<cr>
@@ -147,3 +151,8 @@ map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 map  <C-f> :FZF<CR>
+
+
+"import local scripts
+source ~/.config/nvim/visual-at.vim
+source ~/.config/nvim/abbriviations.vim
