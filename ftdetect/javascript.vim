@@ -1,1 +1,0 @@
-iabbrev func function
