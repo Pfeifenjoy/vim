@@ -31,7 +31,6 @@ Plug 'rizzatti/dash.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-commentary'
-Plug 'flowtype/vim-flow', { 'do': 'npm install -g flow-bin' }
 Plug 'pangloss/vim-javascript'
 
 call plug#end()
