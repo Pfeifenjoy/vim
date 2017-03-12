@@ -37,7 +37,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-if isdirectory("~/Development/vim/setlx-syntax")
+if !empty(glob("~/Development"))
     Plug '~/Development/vim/setlx-syntax'
 else
     Plug 'Pfeifenjoy/setlx-syntax'
