@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/neocomplete.vim'
 Plug 'artur-shaik/vim-javacomplete2'
 
-Plug 'sjl/gundo.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -37,7 +36,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-if !empty(glob("~/Development"))
+if !empty(glob("~/Development/vim/setlx-syntax"))
     Plug '~/Development/vim/setlx-syntax'
 else
     Plug 'Pfeifenjoy/setlx-syntax'
@@ -60,6 +59,9 @@ set spelllang=de
 set laststatus=2
 set laststatus=2
 set lazyredraw 
+if empty(glob("~/.vimundo"))
+    call mkdir("~/.vimundo")
+endif
 set undofile
 set undodir=~/.vimundo
 set clipboard=unnamed
