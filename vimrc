@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/neocomplete.vim'
 Plug 'artur-shaik/vim-javacomplete2'
 
+Plug 'flowtype/vim-flow'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
