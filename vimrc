@@ -97,4 +97,8 @@ let g:syntastic_check_on_open=1
 nnoremap <F5> :GundoToggle<CR>
 
 source ~/.vim/neocomplete.vim
+source ~/.vim/abbreviations.vim
+source ~/.vim/mappings.vim
+source ~/.vim/visual-at.vim
+
 
