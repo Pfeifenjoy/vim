@@ -1,9 +1,17 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 "completion
-Plug 'Shougo/neocomplete.vim'
-Plug 'artur-shaik/vim-javacomplete2'
+"Plug 'Shougo/neocomplete.vim'
+"Plug 'artur-shaik/vim-javacomplete2'
+"Plug 'lervag/vimtex'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 
+"Conceal
+"Plug 'discoloda/c-conceal'
+Plug 'ehamberg/vim-cute-python'
+Plug 'pangloss/vim-javascript'
+
+Plug 'junegunn/vim-emoji'
 Plug 'flowtype/vim-flow'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
@@ -32,10 +40,12 @@ Plug 'rizzatti/dash.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
+Plug 'mikelue/vim-maven-plugin'
+
 "snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
 
 if !empty(glob("~/Development/vim/setlx-syntax"))
     Plug '~/Development/vim/setlx-syntax'
@@ -46,9 +56,6 @@ endif
 call plug#end()
 
 "General Settings
-set tabstop=4
-set shiftwidth=4
-set expandtab
 set showmatch
 set hlsearch
 set incsearch
@@ -69,6 +76,8 @@ set clipboard=unnamed
 set showcmd
 set list
 set listchars=tab:▸\ ,trail:·,eol:¬
+set tabstop=4 shiftwidth=4 expandtab
+set noexpandtab
 set relativenumber
 set number
 set laststatus=2
@@ -80,8 +89,8 @@ syntax on
 colorscheme molokai
 
 "UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-space>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 
@@ -97,9 +106,11 @@ let g:syntastic_check_on_open=1
 "Gundo Toggle
 nnoremap <F5> :GundoToggle<CR>
 
-source ~/.vim/neocomplete.vim
+let g:syntastic_error_symbol = emoji#for('boom')
+let g:syntastic_warning_symbol = emoji#for('scream')
+set completefunc=emoji#complete
+
+"source ~/.vim/neocomplete.vim
 source ~/.vim/abbreviations.vim
 source ~/.vim/mappings.vim
 source ~/.vim/visual-at.vim
-
-
