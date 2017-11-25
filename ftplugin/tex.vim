@@ -1,2 +1,3 @@
+set spell
 inoremap \ /
 inoremap / \

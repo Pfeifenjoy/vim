@@ -1,0 +1,29 @@
+snippet description "Description of the file"
+/**
+* ${1:name}, `!p
+import vim
+import os
+
+snip.rv = os.path.basename(vim.current.buffer.name)
+`
+* Purpose: ${2}
+*
+* @author: Arwed Mett
+*/
+$0
+endsnippet
+
+snippet fdesc "Description of a function"
+/**
+* ${1: function description}
+*
+* @param ${2:name}
+* @return ${3:name}
+*/$0
+endsnippet
+
+snippet sector "Comment sector"
+/************************************************************/
+/* ${1: Sector name}`!p snip.rv = (60 - 3 - len(t[1])) * " "`*/
+/************************************************************/$0
+endsnippet
