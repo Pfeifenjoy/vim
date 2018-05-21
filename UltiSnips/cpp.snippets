@@ -27,3 +27,11 @@ snippet sector "Comment sector"
 /* ${1: Sector name}`!p snip.rv = (60 - 3 - len(t[1])) * " "`*/
 /************************************************************/$0
 endsnippet
+
+snippet mai "Main function"
+int main(const int argc, const char **argv)
+{
+	$0
+	return EXIT_SUCCESS;
+}
+endsnippet

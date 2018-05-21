@@ -5,7 +5,7 @@ function! DoRemote(arg)
 endfunction
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
-"Plug 'flowtype/vim-flow', { 'do': 'npm install -g flow-bin' }
+Plug 'flowtype/vim-flow' ", { 'do': 'npm install -g flow-bin' }
 "Plug 'artur-shaik/vim-javacomplete2'
 
 "Syntax
@@ -18,6 +18,9 @@ Plug 'digitaltoad/vim-jade'
 Plug 'pangloss/vim-javascript'
 Plug 'shirk/vim-gas'
 Plug 'vim-scripts/alex.vim'
+Plug 'andy-morris/happy.vim'
+Plug 'w0rp/ale'
+Plug 'justinmk/vim-syntax-extra'
 
 "Themes
 Plug 'tomasr/molokai'
@@ -29,7 +32,6 @@ Plug 'honza/vim-snippets'
 "Plug 'tpope/vim-surround'
 "Plug 'tpope/vim-fugitive'
 "Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'scrooloose/syntastic'
 "Plug 'bling/vim-airline' 
 "Plug 'mattn/emmet-vim'
 "Plug 'eugen0329/vim-esearch'
