@@ -18,9 +18,9 @@ Plug 'digitaltoad/vim-jade'
 Plug 'pangloss/vim-javascript'
 Plug 'shirk/vim-gas'
 Plug 'vim-scripts/alex.vim'
-Plug 'andy-morris/happy.vim'
 Plug 'w0rp/ale'
 Plug 'justinmk/vim-syntax-extra'
+Plug '1995parham/vim-zimpl'
 
 "Themes
 Plug 'tomasr/molokai'
@@ -107,3 +107,6 @@ source ~/.config/nvim/abbriviations.vim
 source ~/.config/nvim/split-window.vim
 source ~/.config/nvim/ycm.vim
 source ~/.config/nvim/ctrl-p.vim
+
+"seems to get overwritten
+set noexpandtab
