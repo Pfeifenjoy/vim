@@ -49,6 +49,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'machakann/vim-highlightedyank'
+Plug 'gilsondev/searchtasks.vim'
 
 call plug#end()
 
@@ -107,3 +108,6 @@ source ~/.config/nvim/abbriviations.vim
 source ~/.config/nvim/split-window.vim
 source ~/.config/nvim/ycm.vim
 source ~/.config/nvim/ctrl-p.vim
+
+" YouCompleteMe
+let g:ycm_extra_conf_globlist = [ '/path/to/your/project/*' ]
