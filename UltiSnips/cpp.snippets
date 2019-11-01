@@ -1,3 +1,5 @@
+priority 1
+
 snippet description "Description of the file"
 /**
 * ${1:name}, `!p
@@ -28,10 +30,40 @@ snippet sector "Comment sector"
 /************************************************************/$0
 endsnippet
 
-snippet mai "Main function"
-int main(const int argc, const char **argv)
-{
+snippet main "Main function"
+int main(const int argc, const char **argv) {
 	$0
 	return EXIT_SUCCESS;
 }
+endsnippet
+
+snippet name "Namespace"
+namespace $1 {
+	$0
+} // namespace $1
+endsnippet
+
+snippet #i "Include from local directory"
+#include <`!p
+import os
+import vim
+
+root = os.getcwd()
+directories = os.listdir(os.path.join(root, "include"))
+
+if len(directories) == 1:
+	basename = directories[0]
+	snip.rv = basename
+
+`/$1>$0
+endsnippet
+
+snippet struct "Struct"
+struct $1 {
+	$0
+};
+endsnippet
+
+snippet #inc "Include"
+#include "$1"$0
 endsnippet

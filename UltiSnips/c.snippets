@@ -1,44 +1,33 @@
 extends c
 
-snippet name "namespace"
-namespace ${1:name} {
-	${0:code}
+snippet #ig "#include global directory"
+#include "${1:module}"$0
+endsnippet
+
+snippet #il "#include local directory"
+#include "`!p
+import os
+import vim
+
+root = os.getcwd()
+directories = os.listdir(os.path.join(root, "include"))
+
+if len(directories) == 1:
+	basename = directories[0]
+	snip.rv = basename
+
+`/$1"$0
+endsnippet
+
+snippet main "Main function"
+int main(int argc, char **argv) {
+	${0}
+	return EXIT_SUCCESS;
 }
 endsnippet
 
-snippet usi "using namespace 'name'"
-using namespace ${1:name};$0
-endsnippet
-
-snippet class "class"
-class ${1:name} {
-	$0
-};
-endsnippet
-
-snippet pub "public: ...attributes"
-public:
-	$0
-endsnippet
-
-snippet priv "private: ...attributes"
-private:
-	$0
-endsnippet
-
-snippet pro "protected: ...attributes"
-protected:
-	$0
-endsnippet
-
-snippet #inc "#include <...>"
-#include <${1:module}>$0
-endsnippet
-
-snippet #i "#include module"
-#include "./${1:module}"$0
-endsnippet
-
-snippet uni "std::unique_ptr<...>"
-std::unique_ptr<${1:type}> $0
+snippet sector "Comment sector"
+/************************************************************/
+/* ${1: Sector name}`!p snip.rv = (60 - 3 - len(t[1])) * " "`*/
+/************************************************************/$0
 endsnippet

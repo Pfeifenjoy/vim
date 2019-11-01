@@ -6,6 +6,7 @@ endfunction
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'flowtype/vim-flow' ", { 'do': 'npm install -g flow-bin' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 "Plug 'artur-shaik/vim-javacomplete2'
 
 "Syntax
@@ -21,6 +22,7 @@ Plug 'vim-scripts/alex.vim'
 Plug 'w0rp/ale'
 Plug 'justinmk/vim-syntax-extra'
 Plug '1995parham/vim-zimpl'
+Plug 'rightson/vim-p4-syntax'
 
 "Themes
 Plug 'tomasr/molokai'
@@ -49,6 +51,8 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'machakann/vim-highlightedyank'
+Plug 'gilsondev/searchtasks.vim'
+Plug 'ledger/vim-ledger'
 
 call plug#end()
 
@@ -110,3 +114,10 @@ source ~/.config/nvim/ctrl-p.vim
 
 "seems to get overwritten
 set noexpandtab
+
+" Only let ctrl-p search directory where vim was started
+let g:ctrlp_working_path_mode = 0
+
+" Hide pyc files
+let g:netrw_list_hide = '.*\.pyc$'
+
