@@ -1,10 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 "completion
-"Plug 'Shougo/neocomplete.vim'
-"Plug 'artur-shaik/vim-javacomplete2'
-"Plug 'lervag/vimtex'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 
 "Conceal
 "Plug 'discoloda/c-conceal'
@@ -72,7 +69,7 @@ if empty(glob("~/.vimundo"))
 endif
 set undofile
 set undodir=~/.vimundo
-set clipboard=unnamed
+"set clipboard=unnamed
 set showcmd
 set list
 set listchars=tab:▸\ ,trail:·,eol:¬
@@ -90,7 +87,7 @@ colorscheme molokai
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<c-space>"
-let g:UltiSnipsJumpForwardTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 
@@ -114,3 +111,4 @@ set completefunc=emoji#complete
 source ~/.vim/abbreviations.vim
 source ~/.vim/mappings.vim
 source ~/.vim/visual-at.vim
+source ~/.vim/ycm.vim
