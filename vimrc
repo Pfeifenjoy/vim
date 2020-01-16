@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 "completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'flowtype/vim-flow'
 
 "syntax
@@ -11,7 +11,7 @@ Plug 'keith/swift.vim'
 Plug 'jrozner/vim-antlr'
 Plug 'tfnico/vim-gradle'
 Plug 'digitaltoad/vim-jade'
-Plug 'pangloss/vim-javascript'
+Plug 'isruslan/vim-es6'
 Plug 'shirk/vim-gas'
 Plug 'vim-scripts/alex.vim'
 Plug 'w0rp/ale'
@@ -20,7 +20,7 @@ Plug '1995parham/vim-zimpl'
 Plug 'rightson/vim-p4-syntax'
 
 "Conceal
-Plug 'discoloda/c-conceal'
+"Plug 'discoloda/c-conceal'
 Plug 'ehamberg/vim-cute-python'
 
 " Other
@@ -28,27 +28,23 @@ Plug 'junegunn/vim-emoji'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/syntastic'
-Plug 'bling/vim-airline' 
-Plug 'mattn/emmet-vim'
-Plug 'sjl/gundo.vim'
+Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tomasr/molokai'
-Plug 'eugen0329/vim-esearch'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'rizzatti/dash.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-Plug 'mikelue/vim-maven-plugin'
 Plug 'machakann/vim-highlightedyank'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ledger/vim-ledger'
+Plug 'itchyny/lightline.vim'
+
+" Themes
+Plug 'tomasr/molokai'
 
 "snippets
 Plug 'SirVer/ultisnips'
@@ -64,6 +60,7 @@ endif
 call plug#end()
 
 "General Settings
+set nocompatible
 set showmatch
 set hlsearch
 set incsearch
@@ -72,25 +69,32 @@ set ruler
 set background=dark
 set mouse=a
 set spelllang=de
-set laststatus=2
-set laststatus=2
 set lazyredraw 
-if empty(glob("~/.vimundo"))
-    call mkdir("~/.vimundo")
+
+" Create folder where the history is saved
+if empty(glob($HOME."/.vimundo"))
+    call mkdir($HOME."/.vimundo")
 endif
 set undofile
 set undodir=~/.vimundo
+
 "set clipboard=unnamed
 set showcmd
+
+" show whitespaces
 set list
 set listchars=tab:▸\ ,trail:·,eol:¬
+
+" set tabstop size
 set tabstop=4 shiftwidth=4
-set relativenumber
-set number
-set laststatus=2
+
+set number "enable line numbers
 set t_Co=256
 set backspace=indent,eol,start
 set autoindent
+
+set path+=**
+set wildmenu
 
 filetype plugin indent on
 syntax on
@@ -123,7 +127,27 @@ let g:syntastic_warning_symbol = emoji#for('scream')
 let g:syntastic_python_python_exec = 'usr/bin/python3'
 
 "Gundo Toggle
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F5> :UndotreeToggle<CR><C-W>h<C-W>k
+
+" netrw (File Browser)
+let g:netrw_banner=0
+let g:netrw_browser_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+
+" status line
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 source ~/.vim/abbreviations.vim
 source ~/.vim/mappings.vim
