@@ -1,7 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
 "completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+
 Plug 'flowtype/vim-flow'
 
 "syntax
@@ -14,7 +15,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'isruslan/vim-es6'
 Plug 'shirk/vim-gas'
 Plug 'vim-scripts/alex.vim'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'justinmk/vim-syntax-extra'
 Plug '1995parham/vim-zimpl'
 Plug 'rightson/vim-p4-syntax'
@@ -156,3 +157,5 @@ source ~/.vim/ycm.vim
 
 "seems to get overwritten
 set noexpandtab
+
+let g:deoplete#enable_at_startup = 1
