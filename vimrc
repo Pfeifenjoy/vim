@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 call plug#begin('~/.vim/plugged')
 
 "completion
@@ -96,6 +98,7 @@ set autoindent
 
 set path+=**
 set wildmenu
+set encoding=utf-8
 
 filetype plugin indent on
 syntax on
