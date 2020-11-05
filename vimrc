@@ -24,7 +24,7 @@ Plug 'rightson/vim-p4-syntax'
 
 "Conceal
 "Plug 'discoloda/c-conceal'
-Plug 'ehamberg/vim-cute-python'
+"Plug 'ehamberg/vim-cute-python'
 
 " Other
 Plug 'junegunn/vim-emoji'
@@ -45,6 +45,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ledger/vim-ledger'
 Plug 'itchyny/lightline.vim'
+Plug 'puremourning/vimspector'
 
 " Themes
 Plug 'tomasr/molokai'
@@ -152,6 +153,38 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+
+"rebind leader key
+let mapleader = ","
+
+" tabs
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
+
+" splits
+map <Leader>h <c-w>h
+map <Leader>j <c-w>j
+map <Leader>k <c-w>k
+map <Leader>l <c-w>l
+
+" sort
+vnoremap <Leader>s :sort<CR>
+
+" easier indentation
+vnoremap < <gv
+vnoremap > >gv
+
+" highlight 80 character line
+set tw=79
+set colorcolumn=80
+
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+nmap <leader>dd :call vimspector#Launch()<CR>
+nmap <leader>dx :VimspectorReset<CR>
+nmap <leader>de :VimspectorEval<CR>
+nmap <leader>dw :VimspectorWatch<CR>
+nmap <leader>do :VimspectorShowOutput<CR>
 
 source ~/.vim/abbreviations.vim
 source ~/.vim/mappings.vim
