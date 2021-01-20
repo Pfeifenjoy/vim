@@ -1,10 +1,14 @@
+global !p
+from datetime import datetime
+endglobal
+
 snippet legal "Legal disclaimer"
 """
 Copyright (C) EvoCount GmbH - All Rights Reserved
 Unauthorized copying of this file, via any medium is strictly prohibited
 Proprietary and confidential
 
-Arwed Mett <arwed.mett@evocount.de> 2020
+Arwed Mett <arwed.mett@evocount.de> `!p snip.rv = datetime.now().year`
 """
 endsnippet
 

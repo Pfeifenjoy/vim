@@ -46,6 +46,10 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ledger/vim-ledger'
 Plug 'itchyny/lightline.vim'
 Plug 'puremourning/vimspector'
+Plug 'python/mypy'
+Plug 'sjl/gundo.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Themes
 Plug 'tomasr/molokai'
@@ -65,7 +69,6 @@ call plug#end()
 
 "General Settings
 set nocompatible
-set showmatch
 set hlsearch
 set incsearch
 set ignorecase
@@ -130,15 +133,14 @@ let g:syntastic_check_on_open=1
 let g:syntastic_error_symbol = emoji#for('boom')
 let g:syntastic_warning_symbol = emoji#for('scream')
 let g:syntastic_python_python_exec = 'usr/bin/python3'
+let g:syntastic_python_checkers=['python', 'mypy', 'flake8']
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 "Gundo Toggle
 nnoremap <F5> :UndotreeToggle<CR><C-W>h<C-W>k
 
 " netrw (File Browser)
 let g:netrw_banner=0
-let g:netrw_browser_split=4
-let g:netrw_altv=1
-let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " status line
@@ -195,3 +197,11 @@ source ~/.vim/ycm.vim
 set noexpandtab
 
 let g:deoplete#enable_at_startup = 1
+
+set bdir-=.
+set bdir+=/tmp
+
+set dir-=.
+set dir+=/tmp
+
+nnoremap <silent> <Leader>f :Ag<CR>
