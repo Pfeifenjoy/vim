@@ -17,7 +17,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'isruslan/vim-es6'
 Plug 'shirk/vim-gas'
 Plug 'vim-scripts/alex.vim'
-"Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'justinmk/vim-syntax-extra'
 Plug '1995parham/vim-zimpl'
 Plug 'rightson/vim-p4-syntax'
@@ -31,7 +31,7 @@ Plug 'junegunn/vim-emoji'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'kien/ctrlp.vim'
@@ -129,12 +129,12 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " This does what it says on the tin. It will check your file on open too, not just on save.
 " You might not want this, so just leave it out if you don't.
-let g:syntastic_check_on_open=1
-let g:syntastic_error_symbol = emoji#for('boom')
-let g:syntastic_warning_symbol = emoji#for('scream')
-let g:syntastic_python_python_exec = 'usr/bin/python3'
-let g:syntastic_python_checkers=['python', 'mypy', 'flake8']
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+"let g:syntastic_check_on_open=1
+"let g:syntastic_error_symbol = emoji#for('boom')
+"let g:syntastic_warning_symbol = emoji#for('scream')
+"let g:syntastic_python_python_exec = 'usr/bin/python3'
+"let g:syntastic_python_checkers=['python', 'mypy', 'flake8', 'pylint']
+"let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 "Gundo Toggle
 nnoremap <F5> :UndotreeToggle<CR><C-W>h<C-W>k
@@ -177,10 +177,11 @@ vnoremap < <gv
 vnoremap > >gv
 
 " highlight 80 character line
-set tw=79
-set colorcolumn=80
+set colorcolumn=140
 
 " Vimspector
+
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
 let g:vimspector_enable_mappings = 'HUMAN'
 nmap <leader>dd :call vimspector#Launch()<CR>
 nmap <leader>dx :VimspectorReset<CR>
@@ -205,3 +206,6 @@ set dir-=.
 set dir+=/tmp
 
 nnoremap <silent> <Leader>f :Ag<CR>
+
+let b:ale_linters = ['flake8', 'mypy']
+let g:ale_python_auto_pipenv= 1

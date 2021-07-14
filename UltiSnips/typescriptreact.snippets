@@ -1,9 +1,48 @@
+global !p
+from datetime import datetime
+endglobal
+
 snippet legal "Legal disclaimer"
 /*
 Copyright (C) EvoCount GmbH - All Rights Reserved
 Unauthorized copying of this file, via any medium is strictly prohibited
 Proprietary and confidential
 
-Arwed Mett <mett@evocount.de> 2020
+Arwed Mett <arwed.mett@evocount.de> `!p snip.rv = datetime.now().year`
 */
+endsnippet
+
+snippet sector "Comment sector"
+/************************************************************/
+/* ${1: Sector name}`!p snip.rv = (60 - 3 - len(t[1])) * " "`*/
+/************************************************************/$0
+endsnippet
+
+snippet react_component "React component"
+import React from "react"
+import { HTMLAttributes } from "react"
+import { ReactElement } from "react"
+
+export default (props: HTMLAttributes<HTMLElement>): ReactElement => {
+	$0
+}
+endsnippet
+
+snippet styled_react_component "React component"
+import React from "react"
+import { HTMLAttributes } from "react"
+import { ReactElement } from "react"
+
+import styled from "styled-components"
+
+const Styled${1:Component} = styled.div\`
+
+\`
+
+export default (props: HTMLAttributes<HTMLElement>): ReactElement => {
+
+	return <Styled$1 { ...props }>
+		$0
+	</Styled$1>
+}
 endsnippet
