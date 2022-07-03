@@ -44,9 +44,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ledger/vim-ledger'
-Plug 'itchyny/lightline.vim'
 Plug 'puremourning/vimspector'
-Plug 'python/mypy'
 Plug 'sjl/gundo.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -209,3 +207,6 @@ nnoremap <silent> <Leader>f :Ag<CR>
 
 let b:ale_linters = ['flake8', 'mypy']
 let g:ale_python_auto_pipenv= 1
+
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
