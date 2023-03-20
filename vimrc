@@ -3,7 +3,8 @@ scriptencoding utf-8
 call plug#begin('~/.vim/plugged')
 
 "completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'flowtype/vim-flow'
 
@@ -21,6 +22,7 @@ Plug 'w0rp/ale'
 Plug 'justinmk/vim-syntax-extra'
 Plug '1995parham/vim-zimpl'
 Plug 'rightson/vim-p4-syntax'
+Plug 'will133/vim-dirdiff'
 
 "Conceal
 "Plug 'discoloda/c-conceal'
@@ -28,7 +30,7 @@ Plug 'rightson/vim-p4-syntax'
 
 " Other
 Plug 'junegunn/vim-emoji'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 "Plug 'scrooloose/syntastic'
@@ -53,8 +55,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tomasr/molokai'
 
 "snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x'
+  \ }
 
 
 if !empty(glob("~/Development/vim/setlx-syntax"))
@@ -210,3 +217,39 @@ let g:ale_python_auto_pipenv= 1
 
 " Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
+
+function! BrazilWorkspaceRoot()
+  let l:working_directory = getcwd()
+  let l:workspace_root = split(l:working_directory, "/")[0:4]
+  return "/" . join(l:workspace_root, "/")
+endfunction
+
+function! BrazilOpenJDKLocation()
+  let l:workspace_directory=BrazilWorkspaceRoot()
+  let l:jdk_path=""
+  if (isdirectory(l:workspace_directory."/env/OpenJDK8-1.1"))
+      let l:jdk_path=l:workspace_directory."/env/OpenJDK8-1.1"
+  elseif (isdirectory(l:workspace_directory."/env/JDK8-1.0"))
+      let l:jdk_path=l:workspace_directory."/env/JDK8-1.0"
+  endif
+  
+  if (empty(l:jdk_path))
+    return "/apollo/env/JavaSE11/jdk-11/"
+  else
+    return l:jdk_path . "/runtime/jdk1.8/"
+  endif
+endfunction
+
+function! SetBrazilJDKHome()
+  let $JDK_HOME=BrazilOpenJDKLocation()
+endfunction
+call SetBrazilJDKHome()
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <leader>qf <Plug>(coc-fix-current)
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
