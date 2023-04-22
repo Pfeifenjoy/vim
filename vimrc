@@ -3,7 +3,6 @@ scriptencoding utf-8
 call plug#begin('~/.vim/plugged')
 
 "completion
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'flowtype/vim-flow'
@@ -23,10 +22,6 @@ Plug 'justinmk/vim-syntax-extra'
 Plug '1995parham/vim-zimpl'
 Plug 'rightson/vim-p4-syntax'
 Plug 'will133/vim-dirdiff'
-
-"Conceal
-"Plug 'discoloda/c-conceal'
-"Plug 'ehamberg/vim-cute-python'
 
 " Other
 Plug 'junegunn/vim-emoji'
@@ -53,10 +48,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Themes
 Plug 'tomasr/molokai'
-
-"snippets
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install --frozen-lockfile --production',
