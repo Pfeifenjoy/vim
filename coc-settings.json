@@ -1,15 +1,20 @@
 {
-  "suggest.noselect": true,
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "coc.source.vimtex.filetypes": ["tex", "plaintex"],
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "markdown",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "yml",
-    "yaml"
-  ],
-  "cSpell.words": ["fastify"]
+	"suggest.noselect": true,
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"coc.source.vimtex.filetypes": [
+		"tex",
+		"plaintex"
+	],
+	"coc.preferences.formatOnSaveFiletypes": [
+		"css",
+		"markdown",
+		"typescript",
+		"typescriptreact",
+		"json",
+		"yml",
+		"yaml"
+	],
+	"cSpell.words": [
+		"fastify"
+	]
 }
