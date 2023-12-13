@@ -1,20 +1,31 @@
 {
-	"suggest.noselect": true,
-	"typescript.preferences.importModuleSpecifier": "relative",
-	"coc.source.vimtex.filetypes": [
-		"tex",
-		"plaintex"
-	],
-	"coc.preferences.formatOnSaveFiletypes": [
-		"css",
-		"markdown",
-		"typescript",
-		"typescriptreact",
-		"json",
-		"yml",
-		"yaml"
-	],
-	"cSpell.words": [
-		"fastify"
-	]
+  "suggest.noselect": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "coc.source.vimtex.filetypes": ["tex", "plaintex"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "yml",
+    "yaml"
+  ],
+  "cSpell.words": ["fastify"],
+  "python.analysis.autoImportCompletions": true,
+  "[brazil-config]": {
+    "semanticTokens.enable": true
+  },
+  "languageserver": {
+    "brazil-config": {
+      "command": "barium",
+      "filetypes": ["brazil-config"]
+    }
+  },
+  "javascript.format.semicolons": "remove",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }

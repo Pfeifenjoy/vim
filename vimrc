@@ -51,8 +51,10 @@ Plug 'prettier/vim-prettier', {
 Plug 'tomasr/molokai'
 
 "snippets
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+Plug '/apollo/env/envImprovement/vim/amazon/brazil-config'
 
 Plug '/apollo/env/envImprovement/vim/amazon/brazil-config'
 
