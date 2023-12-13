@@ -1,4 +1,12 @@
 {
 	"suggest.noselect": true,
-	"typescript.preferences.importModuleSpecifier": "relative"
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"coc.source.vimtex.filetypes": [
+		"tex",
+		"plaintex"
+	],
+	"coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "typescript", "typescriptreact"],
+	"cSpell.words": [
+		"fastify"
+	]
 }
