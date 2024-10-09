@@ -2,16 +2,14 @@
   "suggest.noselect": true,
   "typescript.preferences.importModuleSpecifier": "relative",
   "coc.source.vimtex.filetypes": ["tex", "plaintex"],
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "markdown",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "yml",
-    "yaml"
-  ],
   "cSpell.words": ["fastify"],
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.8",
+      "path": "/home/arwed/development/backend/env/JDK8-1.0/runtime/jdk1.8"
+    }
+  ],
+  "java.jdt.ls.vmargs": "-javaagent:/home/arwed/development/backend/env/Lombok-1.18.x/runtime/lib/lombok-1.18.26.jar -Xbootclasspath/a:/home/arwed/development/backend/env/Lombok-1.18.x/runtime/lib/lombok-1.18.26.jar",
   "python.analysis.autoImportCompletions": true,
   "[brazil-config]": {
     "semanticTokens.enable": true
@@ -23,6 +21,7 @@
     }
   },
   "javascript.format.semicolons": "remove",
+  "typescript.format.semicolons": "remove",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
