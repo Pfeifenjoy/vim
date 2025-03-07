@@ -22,7 +22,6 @@ Plug 'rightson/vim-p4-syntax'
 Plug 'mustache/vim-mustache-handlebars'
 
 " Other
-Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify' " Start screen
 Plug 'junegunn/vim-emoji' " Show emoji's while typing
 Plug 'tpope/vim-surround' " better selections e.g. for html tags
@@ -51,19 +50,7 @@ Plug 'prettier/vim-prettier', {
 " Themes
 Plug 'tomasr/molokai'
 
-"snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
 Plug '/apollo/env/envImprovement/vim/amazon/brazil-config'
-
-Plug '/apollo/env/envImprovement/vim/amazon/brazil-config'
-
-if !empty(glob("~/Development/vim/setlx-syntax"))
-    Plug '~/Development/vim/setlx-syntax'
-else
-    Plug 'Pfeifenjoy/setlx-syntax'
-endif
 
 call plug#end()
 
@@ -230,6 +217,3 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-imap <C-l> <Plug>(coc-snippets-expand)
-
